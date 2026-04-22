@@ -216,7 +216,7 @@ function App() {
         <div className="section-head">
           <div>
             <p className="section-label">Dashboards</p>
-            <h2>ملفات الداش بورد الثمانية</h2>
+            <h2>لـجــنةالإســكان</h2>
           </div>
         </div>
 
