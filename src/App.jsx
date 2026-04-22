@@ -238,7 +238,7 @@ function App() {
           <p className="section-label">Active Dashboard</p>
           <h2>{activeDashboard.title}</h2>
           <p className="dashboard-subtitle">
-            يعرض حالة المساكن لهذا الملف بشكل منفصل داخل نفس الموقع
+           جــاهزية المـــساكــن
           </p>
         </div>
       </section>
