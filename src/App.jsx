@@ -6,7 +6,7 @@ function App() {
     {
       id: 1,
       name: "150 - 151",
-      title: "كشف جاهزية مساكن 150 - 151",
+      title: "مــركز 150 - 151",
       centersCount: 2,
       housesCount: 42,
       complete: 10,
@@ -21,7 +21,7 @@ function App() {
     {
       id: 2,
       name: "110 - 111 - 112 - 113",
-      title: "كشف جاهزية مساكن 110 - 111 - 112 - 113",
+      title: "مــركز 110 - 111 - 112 - 113",
       centersCount: 4,
       housesCount: 68,
       complete: 18,
@@ -38,7 +38,7 @@ function App() {
     {
       id: 3,
       name: "120 - 121",
-      title: "كشف جاهزية مساكن 120 - 121",
+      title: "مــركز  120 - 121",
       centersCount: 2,
       housesCount: 31,
       complete: 9,
@@ -53,7 +53,7 @@ function App() {
     {
       id: 4,
       name: "130 - 131 - 132 - 133",
-      title: "كشف جاهزية مساكن 130 - 131 - 132 - 133",
+      title: "مــركز 130 - 131 - 132 - 133",
       centersCount: 4,
       housesCount: 56,
       complete: 14,
@@ -70,7 +70,7 @@ function App() {
     {
       id: 5,
       name: "140",
-      title: "كشف جاهزية مساكن 140",
+      title: "مــركز 140",
       centersCount: 1,
       housesCount: 19,
       complete: 6,
@@ -82,7 +82,7 @@ function App() {
     {
       id: 6,
       name: "210 - 211 - 212",
-      title: "كشف جاهزية مساكن 210 - 211 - 212",
+      title: " 210 - 211 - 212",
       centersCount: 3,
       housesCount: 47,
       complete: 8,
@@ -97,8 +97,8 @@ function App() {
     },
     {
       id: 7,
-      name: "220 - 221 - 222",
-      title: "كشف جاهزية مساكن 220 - 221 - 222",
+      name: "220 - 221 - 222 ",
+      title: " 220 - 221 - 222 مــركز ",
       centersCount: 3,
       housesCount: 44,
       complete: 7,
@@ -114,7 +114,7 @@ function App() {
     {
       id: 8,
       name: "310 - 311",
-      title: "كشف جاهزية مساكن 310 - 311",
+      title: " 310 - 311 مــركز",
       centersCount: 2,
       housesCount: 38,
       complete: 4,
