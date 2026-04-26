@@ -104,12 +104,14 @@ button {
 
 .hero-meta {
   display: flex;
-  gap: 16px;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
   color: rgba(255, 255, 255, 0.82);
   font-size: 12px;
   font-weight: 600;
-  justify-content: flex-start;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .hero-label {
@@ -133,6 +135,15 @@ button {
   line-height: 1.8;
 }
 
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  min-width: 170px;
+}
+
 .hero-button {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.12);
@@ -148,7 +159,7 @@ button {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -246,7 +257,7 @@ button {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
   margin-bottom: 20px;
 }
@@ -485,7 +496,8 @@ button {
 
 .mini-box strong {
   color: #332d47;
-  font-size: 24px;
+  font-size: 22px;
+  line-height: 1.6;
 }
 
 .file-card-preview {
@@ -552,15 +564,23 @@ button {
 
 @media (max-width: 1200px) {
   .overall-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .stats-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .overall-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-@media (max-width: 900px) {
   .charts-grid {
     grid-template-columns: 1fr;
   }
@@ -584,11 +604,6 @@ button {
     padding: 18px;
   }
 
-  .hero-meta {
-    flex-direction: column;
-    gap: 6px;
-  }
-
   .hero-top {
     flex-direction: column;
   }
@@ -598,16 +613,16 @@ button {
   }
 
   .hero-logo {
-  width: 150px !important;
-  height: 150px !important;
-  min-width: 150px !important;
-  min-height: 150px !important;
-  max-width: 150px !important;
-  max-height: 150px !important;
-  object-fit: contain !important;
-  display: block !important;
-  flex-shrink: 0;
-}
+    width: 150px !important;
+    height: 150px !important;
+    min-width: 150px !important;
+    min-height: 150px !important;
+    max-width: 150px !important;
+    max-height: 150px !important;
+    object-fit: contain !important;
+    display: block !important;
+    flex-shrink: 0;
+  }
 
   .hero h1 {
     font-size: 28px;
@@ -624,25 +639,4 @@ button {
   .hero-button {
     width: 100%;
   }
-  .hero-side {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 10px;
-  min-width: 170px;
-
-}
-}
-
-.hero-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.5;
-
 }
