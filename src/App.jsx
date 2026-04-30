@@ -34,7 +34,7 @@ import {
 import logo from "./assets/logo.png";
 
 const GOOGLE_SCRIPT_WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbzry0xgukU6gnPO4lCmlq3mke1fhD6KjKAf7oTNDpL7oovNI7dcQ_rx7FeZHtHZGjSloA/exec";
+  "https://script.google.com/macros/s/AKfycbyk4CaYI6MZi6aRcnUxWNDDT4JZKlWSsVJ1NcVEjh1FLo4L9frjYcrTqI7ZjXRJul3ODg/exec";
 
 function toNumber(value, fallback = 0) {
   const cleaned = String(value ?? "")

@@ -103,9 +103,11 @@ button {
   gap: 9px;
   cursor: pointer;
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-size: 14px;
   font-weight: 700;
   transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 .action-btn:hover,
@@ -191,7 +193,9 @@ button {
   font-size: 14px;
   font-weight: 800;
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 .hero-tab:hover {
@@ -312,6 +316,7 @@ button {
   font-weight: 800;
   box-shadow: 0 8px 18px rgba(48, 23, 68, 0.05);
   transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 .filter-chip:hover {
@@ -678,6 +683,60 @@ button {
   font-weight: 700;
 }
 
+/* LOADING / ERROR */
+
+.loading-state {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  text-align: center;
+  padding: 28px;
+  color: #5a2180;
+}
+
+.loading-state h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.loading-state p {
+  margin: 0;
+  color: #8a7b99;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.loading-icon,
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+.error-state {
+  color: #be2d3a;
+}
+
+.inline-error {
+  margin-bottom: 18px;
+  border: 1px solid #ffd2d8;
+  background: #fff0f2;
+  color: #be2d3a;
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  direction: rtl;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* DARK MODE */
 
 .app-page.dark-mode {
@@ -787,6 +846,12 @@ button {
   color: white !important;
 }
 
+.dark-mode .inline-error {
+  background: rgba(190, 45, 58, 0.16);
+  border-color: rgba(255, 210, 216, 0.18);
+  color: #ffb7c0;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1280px) {
@@ -840,64 +905,170 @@ button {
 
 @media (max-width: 720px) {
   .mashaer-hero {
-    padding: 24px 18px 72px;
+    min-height: auto;
+    padding: 18px 18px 74px;
   }
 
   .hero-actions {
     position: relative;
     left: auto;
     top: auto;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 58px;
+    gap: 10px;
     direction: rtl;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
 
-  .action-btn {
-    flex: 1;
-    min-width: 140px;
+  .hero-actions .action-btn,
+  .hero-actions .icon-btn {
+    width: 100%;
+    min-width: 0;
+    height: 56px;
+    border-radius: 20px;
     justify-content: center;
+    font-size: 15px;
+    padding: 0 12px;
+    gap: 8px;
   }
 
-  .icon-btn {
+  .hero-actions .action-btn.primary {
+    grid-column: 1 / -1;
+    height: 58px;
+    font-size: 16px;
+  }
+
+  .hero-actions .icon-btn {
+    padding: 0;
+  }
+
+  .hero-actions svg {
+    width: 21px;
+    height: 21px;
     flex-shrink: 0;
   }
 
   .hero-identity {
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    align-items: center;
     gap: 14px;
+    margin-top: 0;
   }
 
   .mashaer-logo {
-    width: 105px;
+    width: 92px;
+    justify-self: start;
   }
 
   .hero-identity h1 {
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 1.45;
+    margin-bottom: 8px;
   }
 
   .hero-identity p {
     font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
   }
 
   .hero-identity span {
     font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .hero-tabs {
+    margin-top: 26px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    justify-content: flex-start;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-tab {
+    min-width: 150px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    font-size: 14px;
   }
 
   .dashboard-shell {
     padding: 0 18px 34px;
+    margin-top: -46px;
   }
 
   .kpi-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .kpi-card {
     min-height: 96px;
+    border-radius: 22px;
+    padding: 16px 18px;
+    grid-template-columns: 58px 1fr;
+    column-gap: 14px;
+  }
+
+  .kpi-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+  }
+
+  .kpi-card strong {
+    font-size: 30px;
+  }
+
+  .kpi-card span {
+    font-size: 14px;
+  }
+
+  .filters-area {
+    gap: 12px;
+  }
+
+  .filter-group {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex-shrink: 0;
   }
 
   .active-file-panel {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .active-file-text h2 {
+    font-size: 22px;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .chart-card.wide {
+    grid-column: span 1;
   }
 
   .chart-height,
@@ -910,12 +1081,55 @@ button {
     border-radius: 22px;
   }
 
-  .filter-group {
-    justify-content: flex-start;
+  .card-head h3 {
+    font-size: 18px;
   }
 
   .executive-note {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-actions {
+    grid-template-columns: 1fr 1fr 54px;
+    gap: 9px;
+  }
+
+  .hero-actions .action-btn,
+  .hero-actions .icon-btn {
+    height: 54px;
+    font-size: 14px;
+    border-radius: 18px;
+  }
+
+  .hero-actions .action-btn.primary {
+    height: 56px;
+  }
+
+  .hero-identity {
+    grid-template-columns: 82px 1fr;
+    gap: 12px;
+  }
+
+  .mashaer-logo {
+    width: 82px;
+  }
+
+  .hero-identity h1 {
+    font-size: 22px;
+  }
+
+  .hero-identity p {
+    font-size: 13px;
+  }
+
+  .hero-identity span {
+    font-size: 11px;
+  }
+
+  .hero-tab {
+    min-width: 145px;
   }
 }
